@@ -1,0 +1,38 @@
+header h1 {
+  text-align: center;
+  font-weight: bold;
+}
+.content {
+  width: 35%;
+  margin: 50px auto;
+}
+
+#userInput {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+#userInput:focus {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+ul {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+.movie {
+  padding: 15px;
+  margin-bottom: 8px;
+  background-color: #1976d2;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
+}
+.status {
+  color: yellow;
+  cursor: pointer;
+}
