@@ -1,0 +1,29 @@
+header h1 {
+  text-align: center;
+  font-weight: bold;
+}
+.content {
+  width: 35%;
+  margin: 50px auto;
+}
+
+#userInput {
+  width: 100%;
+  padding: 15px;
+  border-radius: 15px;
+}
+#userInput:focus {
+  outline: none;
+}
+li {
+  list-style: none;
+}
+.movie {
+  font-size: large;
+  padding: 15px;
+  background-color: blue;
+  margin: 8px;
+}
+.status {
+  text-align: center;
+}
