@@ -18,12 +18,21 @@ header h1 {
 li {
   list-style: none;
 }
-.movie {
-  font-size: large;
+ul {
+  width: 100%;
   padding: 15px;
-  background-color: blue;
-  margin: 8px;
+  border-radius: 15px;
+}
+.movie {
+  padding: 15px;
+  margin-bottom: 8px;
+  background-color: #1976d2;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
 }
 .status {
-  text-align: center;
+  color: yellow;
+  cursor: pointer;
 }
