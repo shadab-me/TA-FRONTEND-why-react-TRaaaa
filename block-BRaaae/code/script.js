@@ -1,14 +1,13 @@
 let userInput = document.querySelector("#userInput");
 let content = document.querySelector(".content");
-let moviesUI = document.createElement("ul");
-moviesUI.setAttribute("class", "movies");
 let moviesList = JSON.parse(localStorage.getItem("moviesList")) ?? [];
-function elt(type, attr = {}, ...children) {
+
+/*function elem(type, attr = {}, ...children) {
   let el = document.createElement(type);
   for (const key in attr) {
     if (key.startsWith("data-")) {
       el.setAttribute(key, attr[key]);
-    } else if (key.startsWith("class")) {
+    } else if (key.startsWith("className")) {
       el.classList.add(attr[key]);
     } else {
       el[key] = attr[key];
@@ -24,28 +23,27 @@ function elt(type, attr = {}, ...children) {
   });
   return el;
 }
+*/
 function createUI(movies) {
-  moviesUI.innerHTML = "";
-
-  movies.forEach((movie, index) => {
-    let status = elt(
+  let allMovies = movies.map((movie, index) => {
+    let status = React.createElement(
       "span",
-      { class: "status", "data-index": index },
+      { className: "status", "data-index": index },
       movie.isWatch ? "Watched" : "Watch"
     );
-    let movieUI = elt(
+    let movieUI = React.createElement(
       "li",
       {
-        class: "movie",
+        className: "movie",
         "data-id": index,
       },
       status
     );
     movieUI.innerHTML = `<span> ${movie.movieName}</span>`;
-    movieUI.appendChild(status);
-    moviesUI.appendChild(movieUI);
-    content.appendChild(moviesUI);
+    let moviesUI = React.createElement("ul", { className: "movies" }, movieUI);
+    return moviesUI;
   });
+  ReactDOM.render(allMovies, content);
   localStorage.setItem("moviesList", JSON.stringify(moviesList));
 }
 
