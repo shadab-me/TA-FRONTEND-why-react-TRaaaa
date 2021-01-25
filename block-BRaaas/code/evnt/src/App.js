@@ -1,18 +1,13 @@
 import "./App.css";
+
 import ClassApp from "./ClassApp";
 import Fruits from "./Fruit";
 
-function App() {
-  function clickHandler(name) {
-    alert(`Hello ${name}`);
-  }
-  let fruits = [
-    { id: "apple", value: "🍎 apple" },
-    { id: "orange", value: "🍊 orange" },
-    { id: "grape", value: "🍇 grape" },
-    { id: "pear", value: "🍐 pear" },
-  ];
+function clickHandler(name) {
+  alert(`Hello ${name}`);
+}
 
+function App() {
   return (
     <div className="App">
       <button onClick={() => alert("Hello React Event")}>Click Me</button>
@@ -25,7 +20,6 @@ function App() {
       <button name="Bran" onClick={() => clickHandler("Bran")}>
         Bran
       </button>
-
       <ClassApp />
       <Fruits />
     </div>
